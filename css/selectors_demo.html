@@ -1,0 +1,97 @@
+<html>
+
+<head>
+   
+    <style>
+        /* all h2 elements */
+        h2 {
+            color: red;
+            font-family: 'arial';
+        }
+
+        /* by id */
+        #d2 {
+            color: green;
+        }
+
+        /* Multiple elements */
+        h1,
+        h2 {
+            letter-spacing: 2pt;
+        }
+
+        /* Divs with attribute title */
+        div[title] {
+            color: rgb(200, 100, 200);
+        }
+
+        /* Attribute selector */
+        a[target='_blank'] {
+            font-size: 1.5em;
+        }
+
+        a[title*='Show'] {
+            font-size: 2.0em;
+        }
+        /* Pseudo class */
+        a:hover {
+            color: purple;
+        }
+
+
+        /* Pseudo element */
+        li::marker {
+            color: red;
+        }
+
+        /* Combinator */
+        /* First span after div */
+        div + span {
+            color: green;
+        }
+        /* All a immediate children of div  */
+        div > a {
+            color: black;
+        }
+        /* Nested */
+        div pre  {
+            font-size:1.5em;
+        }
+
+        /* CSS class */
+        .banner {
+            color: blue;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Srikanth Technologies</h1>
+    <h2>Where Quality Matters</h2>
+    <h2>Srikanth Pragada</h2>
+    <h1>Simple Heading</h1>
+
+    <div title="First">
+        First DIV
+        <br />
+        <a href="">Anchor Inside DIV</a>
+        <p>
+            Paragraph One <pre>DIV -> P -> PRE </pre>
+            <a href="" title="It Shows Details">Inside P, which is in DIV</a>
+        </p>
+    </div>
+    <div id="d2">Second DIV</div>
+    <p></p>
+    <a href="google.com" target="_blank">Google</a>
+
+    <div class="banner">Banner</div>
+    <span>Span Banner</span>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+</body>
+
+</html>
