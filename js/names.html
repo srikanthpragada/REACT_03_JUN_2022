@@ -1,0 +1,43 @@
+
+<html>
+
+<head>
+    <script>
+        "use strict";
+        let names = [];  // Empty array 
+
+        function addName() {
+            let fullname = document.getElementById('fullname');
+            names.push(fullname.value)  // add name to array 
+
+            // Display names 
+            showNames();
+        }
+
+        function deleteName(name) {
+            // console.log('Deleting...' + name)
+            let pos = names.indexOf(name)
+            names.splice(pos,1)
+            showNames();
+        }
+        function showNames() {
+            let output = "";
+
+            for (let n of names) {
+                output += `<li>${n}</li><img onClick="deleteName('${n}')" src='../photos/delete.jpg' style='width:32px;height:32px'/>`
+            }
+
+            document.getElementById('names').innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Names</h2>
+    Name : <input type="text" id="fullname" />
+    <p/>
+    <button onclick="addName()">Add</button>
+    <ul id="names" style="color:blue">
+    </ul>
+</body>
+</html>

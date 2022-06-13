@@ -11,12 +11,7 @@
         }
     </style>
 
-    <script>
-        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
-    </script>
+   
 
 </head>
 
@@ -25,7 +20,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3 border">
-                <img title="Anders" class="rounded img-fluid" data-bs-toggle="tooltip" src="../photos/anders.jpg" />
+                <img title="Anders" class="rounded" data-bs-toggle="tooltip" src="../photos/anders.jpg" />
             </div>
             <div class="col-sm-3">
                 <img class="rounded-circle float-end" src="../photos/john_resig.jpg" />
@@ -35,8 +30,15 @@
             </div>
 
         </div>
-    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="Hooray!">Hover over me!</button>
+     
     </div>
+
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 
 
 </body>

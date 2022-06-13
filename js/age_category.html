@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">    
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Category</title>
+    <script>
+        "use strict";
+        function showCategory() {
+            var ageInput = document.getElementById("age")
+            var age = parseInt(ageInput.value)
+           
+            if (age < 30)
+                cat = "Young"
+            else
+                if (age < 60)
+                    cat = "Middle-aged"
+                else
+                    cat = "Old"
+            
+            // show result
+            var result = document.getElementById("result")
+            result.innerHTML = "Category = " + cat
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Age Category</h2>
+    Age : <input type="number" id="age" />
+    <button onClick="showCategory()">Get Category</button>
+    <P></P>
+    <h3 id="result" style="color:red"></h3>
+</body>
+
+</html>
