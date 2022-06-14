@@ -24,7 +24,8 @@
             let output = "";
 
             for (let n of names) {
-                output += `<li>${n}</li><img onClick="deleteName('${n}')" src='../photos/delete.jpg' style='width:32px;height:32px'/>`
+                output += `<li style="float:left">${n}</li><img onClick="deleteName('${n}')" src='../photos/delete.jpg' 
+                            style='display:inline-block;width:16px;height:16px;'/> <br style='clear:both'>`
             }
 
             document.getElementById('names').innerHTML = output;

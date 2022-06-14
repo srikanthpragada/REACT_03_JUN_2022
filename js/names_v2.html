@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script>
+        "use strict";
+        let names = [];  // Empty array 
+
+        function addName() {
+            let fullname = document.getElementById('fullname');
+            names.push(fullname.value)  // add name to array 
+
+            // Display names 
+            showNames();
+        }
+
+        function deleteName(name) {
+            // console.log('Deleting...' + name)
+            let pos = names.indexOf(name)
+            names.splice(pos, 1)
+            showNames();
+        }
+
+        function showNames() {  
+            let output = "";
+
+            for (let n of names) {
+                output += `<li style="float:left;">${n}</li>
+                           <span onclick="deleteName('${n}')" class="bi bi-trash-fill" />
+                           <br style='clear:both'>`
+            }
+
+            document.getElementById('names').innerHTML = output;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Names</h2>
+        Name : <input type="text" id="fullname" />
+        <p />
+        <button onclick="addName()">Add</button>
+        <ul id="names" style="color:blue">
+        </ul>
+    </div>
+</body>
+
+</html>
