@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Total & Average</title>
+</head>
+<script>
+    function calculate() {
+        var marks_text = document.getElementById('marks').value;
+        marks = marks_text.split(",")
+        let total = 0;
+        let count = 0;
+        
+        for (mark of marks) {
+            if (!isNaN(mark)) {
+                total = total + parseInt(mark);
+                count ++;
+            }
+        }
+        document.getElementById('total').innerHTML = " Total Marks : " + (total);
+        document.getElementById('average').innerHTML = " Average Marks : " + (total / count).toFixed(2);
+    }
+</script>
+<bod>
+    <h3> Find Total and Average Marks :</h3>
+    <form>
+        <label>Please Enter all subjects marks with separated by (,) : </label>
+        <input type="text" id="marks">
+        <p></p>
+        <input type="button" value="Calculate" onclick="calculate()">
+        <p></p>
+        <div id="total"></div>
+        <p></p>
+        <div id="average"></div>
+    </form>
+</bod>
+
+</html>
