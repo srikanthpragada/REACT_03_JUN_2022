@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Names from './state/Names';
+import Team from './basics/Team';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Names />
+    
+    <Team title="Men in Blue"
+          players={[{ fullname: 'Kholi', role: 'Batsman' },
+                    { fullname: 'Rohit', role: 'Batsman' },
+                    { fullname: 'Panth', role: "WicketKeeper"}]} />
   </React.StrictMode>
 );
 
