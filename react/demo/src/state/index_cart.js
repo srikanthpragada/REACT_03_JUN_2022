@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import Cart from './basics/Cart';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Contacts from './state/Contacts';
  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Contacts />
+    <Cart cartItems={[{ name: 'iPhone 12', price: 100000, qty: 2 },
+                      { name: 'Dell XPS 15', price : 150000, qty : 1}]} />
   </React.StrictMode>
 );
 

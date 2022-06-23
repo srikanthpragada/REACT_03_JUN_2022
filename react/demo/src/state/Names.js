@@ -5,7 +5,7 @@ export default function Names() {
 
     function addName() {
         var name = document.getElementById("fullname").value 
-        setNames( [...names, name])
+        setNames([...names, name])
     }
     function deleteName(idx)
     {
