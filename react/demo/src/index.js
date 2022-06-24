@@ -2,14 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import './index.css';
+import Clock2 from './lifecycle/Clock2';
 import reportWebVitals from './reportWebVitals';
-import Contacts from './state/Contacts';
+ 
  
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <Contacts />
+     <Clock2 />
   </React.StrictMode>
 );
 
