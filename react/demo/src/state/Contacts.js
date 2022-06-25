@@ -4,7 +4,15 @@ export default function Contacts() {
     var [contacts, setContacts] = useState([])
 
     function addNewContact(contact) {
-        setContacts([...contacts, contact])
+        // find out whether contact with same details is already present 
+        var foundItem = contacts.find((c, idx) => c.name === contact.name && c.email === contact.email)
+        if (!foundItem) {  // contact not found 
+            setContacts([...contacts, contact])
+            return true;
+        }
+        else
+            return false;
+            
         //console.log(contacts)
     }
 
@@ -25,6 +33,7 @@ export default function Contacts() {
 
 function AddContact(props) {
     var [contact, setContact] = useState({ name: 'Srikanth', email: 'srikanth@gmail.com' })
+    var [message, setMessage] = useState('')
 
     // function changeName(event) {
     //     //console.log(event.target.value)
@@ -44,8 +53,13 @@ function AddContact(props) {
     
     function addContact(event) {
         //console.log(contact)
-        props.addContact(contact)  
+        var done = props.addContact(contact)  
         event.preventDefault()
+        
+        if (!done) 
+            setMessage('Contact already exists')
+        else
+            setMessage('')
     }
 
     function clearFields() {
@@ -59,6 +73,7 @@ function AddContact(props) {
                 <br />
                 <input type="text" id="fullname" value={contact.name} name="name"
                     onChange={updateContact} required></input>
+                <span className="text-danger"> {message} </span>
                 <p></p>
                 <label htmlFor="email">Email</label>
                 <br />
@@ -76,7 +91,8 @@ function AddContact(props) {
 function ListContacts(props) {
 
     function deleteSelectedContact(idx) {
-          props.deleteContact(idx)
+        if (window.confirm("Do you want to delete contact?"))
+            props.deleteContact(idx)
     }
 
     return (
