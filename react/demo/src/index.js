@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import GitUserInfoJQuery from './ajax/GitUserInfoJQuery';
+import AddCourses from './ajax/AddCourse';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
  
@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <GitUserInfoJQuery />
+     <AddCourses />
   </React.StrictMode>
 );
 
