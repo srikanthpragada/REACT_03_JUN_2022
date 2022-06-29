@@ -3,14 +3,13 @@ import $ from 'jquery'
 
 export default function AddCourses() {
     const [course, setCourse] = useState({})
-
+    
     function changeValue(e) {
         setCourse({ ...course, [e.target.name]: e.target.value })
     }
  
     function addCourse(e) {
         e.preventDefault()
-        
         $.ajax(
             {
                 url: `http://localhost:4000/courses`,

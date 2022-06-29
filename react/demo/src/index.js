@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import AddCourses from './ajax/AddCourse';
+import Books from './books/Books';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
  
@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-     <AddCourses />
+     <Books />
   </React.StrictMode>
 );
 
